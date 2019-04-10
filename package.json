@@ -1,5 +1,5 @@
 {
-    "name": "@freshheads/run-concurrently",
+    "name": "@gnoesiboe/run-concurrently",
     "version": "0.1.0",
     "description": "Command line tool to use 'concurrently' with a JSON configuration, to make it more readable and easier to manage.",
     "main": "cli.js",
@@ -29,7 +29,7 @@
         "cli",
         "taskrunner"
     ],
-    "author": "Gijs Nieuwenhuis <gijs.nieuwenhuis@freshheads.com>",
+    "author": "Gijs Nieuwenhuis <gijsnieuwenhuis@gmail.com>",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/freshheads/run-concurrently/issues"
