@@ -12,16 +12,35 @@ Node cli task that uses [`concurrently`](https://www.npmjs.com/package/concurren
 
 Can be placed in `package.json`, located in the location that this task is run from:
 
+_Format:_
+
 ```json
 {
     ...,
-    // root key, required
     "concurrentTasks": {
+        "<task_name>": {
+            "subTasks": [
+                {
+                    "workingDirectory": "<directory_to_execute_code_in>",
+                    "command": "<command_to_execute_in_working_directory>",
+                    "name": "<prefix_that_is_used_to_distinguish_seperate_tasks_output>"
+                },
+                ...
+            ]
+        }
+    }
+}
 
-        // name task that is executed (`run-concurrently build`)
+
+```
+
+Example, added to `package.json`:
+
+```json
+{
+    ...,
+    "concurrentTasks": {
         "build": {
-
-            // sub tasks that are executed concurrently
             "subTasks": [
                 {
                     "workingDirectory": "./assets/a",
@@ -39,14 +58,10 @@ Can be placed in `package.json`, located in the location that this task is run f
                     "name": "frontend"
                 }
             ],
-
-            // Optional options supplied to `concurrently`
             "options": {
                 "prefixLength": 20
             }
         },
-
-        // Other tasks..
         "build:watch": {
             "subTasks": [...]
         }
