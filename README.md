@@ -2,7 +2,9 @@
 
 Node cli task that uses [`concurrently`](https://www.npmjs.com/package/concurrently) combined with a JSON configuration in `package.json` or seperate file, to make concurrent tasks better readable and easier to manage. It for instance can be used to build a project in one command, as it consists of seperate individual applications. Within our organisation we plan on using it for building several seperate webpack applications.
 
-## Use
+![alt text](./support/images/screenshot_1.png);
+
+## Usage
 
 1. Add your task configuration to your application's `package.json` or seperate json file.
 2. Use the cli command to execute the tasks concurrently
