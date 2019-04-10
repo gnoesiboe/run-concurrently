@@ -32,7 +32,6 @@ const verbose = argv.verbose;
 const {
     logSection,
     logDebug,
-    logInfo,
     logError,
     logSuccess,
 } = require('./utility/consoleHelper');
