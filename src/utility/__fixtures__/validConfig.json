@@ -1,0 +1,18 @@
+{
+    "concurrentTasks": {
+        "build": {
+            "subTasks": [
+                {
+                    "workingDirectory": "./assets/admin",
+                    "command": "npm run build",
+                    "name": "admin"
+                },
+                {
+                    "workingDirectory": "./assets/website",
+                    "command": "npm run build",
+                    "name": "website"
+                }
+            ]
+        }
+    }
+}

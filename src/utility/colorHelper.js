@@ -15,3 +15,4 @@ function determineColorForIndex(index) {
 }
 
 exports.determineColorForIndex = determineColorForIndex;
+exports.colors = colors;

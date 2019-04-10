@@ -95,8 +95,22 @@ run-concurrently build --config=/some/dir/runConcurrentlyConfig.json --verbose
 
 ## Developmemt
 
-@todo
+Install dependencies:
+
+```bash
+npm install
+```
 
 ### Running tests
 
-@todo
+Run tests by executing:
+
+```bash
+npm run test
+```
+
+Or in watch mode:
+
+```bash
+npm run test:watch
+```
