@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const CONFIG_KEY = 'concurrentMultiTasks';
+const CONFIG_KEY = 'concurrentTasks';
 
 function validateSubTasksAreFormattedCorrectly(subTasks) {
     const Joi = require('joi');
