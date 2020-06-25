@@ -1,4 +1,4 @@
-exports.convertTaskConfigurationToConcurrentlyArguments = function(
+exports.convertTaskConfigurationToConcurrentlyArguments = function (
     configForTask
 ) {
     const { determineColorForIndex } = require('./colorHelper');

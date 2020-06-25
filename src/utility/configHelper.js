@@ -25,7 +25,7 @@ function validateSubTasksAreFormattedCorrectly(subTasks) {
     }
 }
 
-exports.getConfigForTask = function(task, configFilePath) {
+exports.getConfigForTask = function (task, configFilePath) {
     const configFileExists = fs.existsSync(configFilePath);
 
     if (!configFileExists) {

@@ -4,7 +4,7 @@ const argv = require('yargs')
     .command(
         'run-concurrent-from-config [task]',
         'Uses concurrently to run the supplied task from a configuration file.',
-        yargs => {
+        (yargs) => {
             yargs.positional('task', {
                 describe: "Task to execute. Defaults to 'build'",
                 type: 'string',
@@ -69,12 +69,12 @@ if (verbose) {
     logDebug(''); // line break
 }
 
-concurently(commands, options)
-    .then(() => {
+concurently(commands, options).then(
+    () => {
         logSuccess('\ndone');
-    })
-    .catch(error => {
-        logError('\nTasks exited with error :');
-
-        throw error;
-    });
+    },
+    (failureExitCode) => {
+        logError('\nOne of tasks returned error');
+        process.exit(failureExitCode);
+    }
+);
