@@ -75,6 +75,15 @@ concurently(commands, options).then(
     },
     (failureExitCode) => {
         logError('\nOne of tasks returned error');
-        process.exit(failureExitCode);
+
+        if (Array.isArray(failureExitCode)) {
+            const containsErrorExitCode = failureExitCode.some(
+                (code) => parseInt(code) > 0
+            );
+
+            process.exit(containsErrorExitCode ? 1 : 0);
+        } else {
+            process.exit(failureExitCode);
+        }
     }
 );
