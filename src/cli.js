@@ -73,8 +73,8 @@ concurently(commands, options).then(
     () => {
         logSuccess('\ndone');
     },
-    (failure) => {
+    (failureExitCode) => {
         logError('\nOne of tasks returned error');
-        process.exit(failure);
+        process.exit(failureExitCode);
     }
 );
