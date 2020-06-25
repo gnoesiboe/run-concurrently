@@ -1,4 +1,4 @@
-exports.convertTaskConfigurationToConcurrentlyArguments = function(
+exports.convertTaskConfigurationToConcurrentlyArguments = function (
     configForTask
 ) {
     const { determineColorForIndex } = require('./colorHelper');
@@ -16,7 +16,7 @@ exports.convertTaskConfigurationToConcurrentlyArguments = function(
     );
 
     const DEFAULT_OPTIONS = {
-        killOthers: ['failure', 'success']
+        killOthers: ['failure', 'success'],
     };
 
     const options = {
