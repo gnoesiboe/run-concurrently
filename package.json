@@ -4,14 +4,14 @@
     "description": "Command line tool to use 'concurrently' with a JSON configuration, to make it more readable and easier to manage.",
     "main": "./src/cli.js",
     "dependencies": {
-        "chalk": "^2.4.2",
-        "concurrently": "^5.1.0",
+        "chalk": "^4.1.0",
+        "concurrently": "^5.2.0",
         "joi": "^14.3.1",
-        "yargs": "^13.3.2"
+        "yargs": "^15.3.1"
     },
     "devDependencies": {
         "husky": "^1.3.1",
-        "jest": "^24.9.0",
+        "jest": "^26.1.0",
         "lint-staged": "^8.2.1",
         "prettier": "^1.19.1"
     },
