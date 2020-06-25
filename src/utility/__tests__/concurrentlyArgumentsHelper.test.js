@@ -42,7 +42,7 @@ describe('concurrentlyArgumentsHelper', () => {
             ]);
 
             expect(options).toEqual({
-                killOthers: ['failure', 'success'],
+                killOthers: ['failure'],
                 prefixLength: 20,
             });
         });

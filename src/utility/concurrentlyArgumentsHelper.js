@@ -16,7 +16,7 @@ exports.convertTaskConfigurationToConcurrentlyArguments = function (
     );
 
     const DEFAULT_OPTIONS = {
-        killOthers: ['failure', 'success'],
+        killOthers: ['failure'],
     };
 
     const options = {
