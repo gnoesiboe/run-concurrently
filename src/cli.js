@@ -72,9 +72,7 @@ if (verbose) {
 concurently(commands, options)
     .then(() => {
         logSuccess('\ndone');
-    })
-    .catch(error => {
-        logError('\nTasks exited with error :');
-
-        throw error;
+    }, (failure) => {
+        logError('\nOne of tasks returned error');
+        process.exit(failure);
     });
