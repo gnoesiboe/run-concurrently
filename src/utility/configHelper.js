@@ -18,7 +18,7 @@ function validateSubTasksAreFormattedCorrectly(subTasks) {
         options: Joi.object(), // @see https://www.npmjs.com/package/concurrently#concurrentlycommands-options
     });
 
-    const result = Joi.validate(subTasks, taskConfigSchema);
+    const result = taskConfigSchema.validate(subTasks);
 
     if (result.error) {
         throw result.error;
