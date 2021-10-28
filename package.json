@@ -4,7 +4,7 @@
     "description": "Command line tool to use 'concurrently' with a JSON configuration, to make it more readable and easier to manage.",
     "main": "./src/cli.js",
     "dependencies": {
-        "chalk": "^4.1.0",
+        "chalk": "^4.1.2",
         "concurrently": "^5.2.0",
         "joi": "^14.3.1",
         "yargs": "^15.3.1"
