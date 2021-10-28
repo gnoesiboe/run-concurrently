@@ -25,8 +25,8 @@ const argv = require('yargs')
     .help('h')
     .alias('h', 'help').argv;
 
-const arguments = argv._;
-const task = arguments[0] || 'build';
+const args = argv._;
+const task = args[0] || 'build';
 const configFilePath = argv.config || `${process.cwd()}/package.json`;
 const verbose = argv.verbose;
 const {
@@ -56,9 +56,8 @@ const {
     convertTaskConfigurationToConcurrentlyArguments,
 } = require('./utility/concurrentlyArgumentsHelper');
 
-const [commands, options] = convertTaskConfigurationToConcurrentlyArguments(
-    configForTask
-);
+const [commands, options] =
+    convertTaskConfigurationToConcurrentlyArguments(configForTask);
 
 if (verbose) {
     logDebug('With commands:\n');

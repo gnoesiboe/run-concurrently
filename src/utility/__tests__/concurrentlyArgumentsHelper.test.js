@@ -23,10 +23,8 @@ describe('concurrentlyArgumentsHelper', () => {
                 },
             };
 
-            const [
-                commands,
-                options,
-            ] = convertTaskConfigurationToConcurrentlyArguments(config);
+            const [commands, options] =
+                convertTaskConfigurationToConcurrentlyArguments(config);
 
             expect(commands).toEqual([
                 {
