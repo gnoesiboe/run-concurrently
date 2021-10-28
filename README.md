@@ -1,6 +1,6 @@
 # `@gnoesiboe/run-concurrently`
 
-Node cli task that uses [`concurrently`](https://www.npmjs.com/package/concurrently) combined with a JSON configuration in `package.json` or seperate file, to make concurrent tasks better readable and easier to manage. It for instance can be used to build a project in one command, as it consists of seperate individual applications. Within our organisation we plan on using it for building several seperate webpack applications.
+Node cli task that uses [`concurrently`](https://www.npmjs.com/package/concurrently) combined with a JSON configuration in `package.json` or separate file, to make concurrent tasks better readable and easier to configure. It for instance can be used to build a project in one command, when it consists of separate individual applications. Within our organisation we use it for starting and maintaining several development servers with one command.
 
 ![alt text](./support/images/screenshot_1.png);
 
@@ -12,7 +12,7 @@ npm install --save-dev @gnoesiboe/run-concurrently
 
 ## Usage
 
-1. Add your task configuration to your application's `package.json` or seperate json file.
+1. Add your task configuration to your application's `package.json` or separate json file.
 2. Use the cli command to execute the tasks concurrently
 3. Setup shortcuts in the root of your application for easier execution (for instance `scripts` in `package.json` or `make`)
 
@@ -38,8 +38,6 @@ _Format:_
         }
     }
 }
-
-
 ```
 
 Example, added to `package.json`:
@@ -77,7 +75,7 @@ Example, added to `package.json`:
 }
 ```
 
-You can also place the configuration outside the `package.json` and into a seperate file. For this task to find it, you have to use the `--config` option to supply the server path to it. See below for more information.
+You can also place the configuration outside the `package.json` and into a separate JSON file. For this task to find it, you have to use the `--config` option to supply the server path to it. See below for more information.
 
 ### CLI command usage
 
@@ -95,13 +93,37 @@ You can also place the configuration outside the `package.json` and into a seper
 | `--help` or `-h`    | Prints information about how to use this cli command         | na.      | `false`  | na.                                                   |
 | `--verbose` or `-v` | If flagged with verbose, extra debug output is displayed     | na.      | `false`  | na.                                                   |
 
-#### Example
+
+### Running the command
+
+With configuration in `package.json`:
 
 ```bash
-run-concurrently build --config=/some/dir/runConcurrentlyConfig.json --verbose
+./node_modules/.bin/run-concurrently <command> --verbose
 ```
 
-## Developmemt
+With separate configuration file:
+
+```bash
+./node_modules/.bin/run-concurrently <command> --config=/path/to/config.json --verbose
+```
+
+Often it easier to alias it in a NPM script, like:
+
+
+```json
+// package.json
+
+{
+    "scripts": {
+        "<command>": "run-concurrently <command>"
+    }
+}
+```
+
+---
+
+## Development
 
 Install dependencies:
 
