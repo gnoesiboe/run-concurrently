@@ -72,17 +72,14 @@ concurently(commands, options).then(
     () => {
         logSuccess('\ndone');
     },
-    (failureExitCode) => {
-        logError('\nOne of tasks returned error');
+    (errorResponse) => {
+        const commandWithError = errorResponse.find(
+            (closeEvent) => closeEvent.exitCode > 0
+        );
 
-        if (Array.isArray(failureExitCode)) {
-            const containsErrorExitCode = failureExitCode.some(
-                (code) => parseInt(code) > 0
-            );
+        logError('\nOne of tasks returned error:');
+        logDebug(commandWithError);
 
-            process.exit(containsErrorExitCode ? 1 : 0);
-        } else {
-            process.exit(failureExitCode);
-        }
+        process.exit(commandWithError.exitCode);
     }
 );
