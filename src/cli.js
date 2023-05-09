@@ -68,7 +68,9 @@ if (verbose) {
     logDebug(''); // line break
 }
 
-concurrently(commands, options).then(
+const { result } = concurrently(commands, options)
+
+result.then(
     () => {
         logSuccess('\ndone');
     },
