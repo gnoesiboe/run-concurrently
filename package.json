@@ -5,7 +5,7 @@
     "main": "./src/cli.js",
     "dependencies": {
         "chalk": "^4.1.2",
-        "concurrently": "^6.3.0",
+        "concurrently": "^8.0.1",
         "joi": "^17.4.2",
         "yargs": "^17.2.1"
     },
@@ -17,6 +17,9 @@
         "test": "jest",
         "test:watch": "jest --watch --notify",
         "prettier": "prettier --write 'src/**/*.{js,json,md}'"
+    },
+    "engines": {
+        "node": "^16.0.0"
     },
     "bin": {
         "run-concurrently": "./src/cli.js"
