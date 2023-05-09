@@ -51,7 +51,7 @@ logSuccess('done', '\n');
 
 logSection('Run concurrently');
 
-const concurently = require('concurrently');
+const concurrently = require('concurrently');
 const {
     convertTaskConfigurationToConcurrentlyArguments,
 } = require('./utility/concurrentlyArgumentsHelper');
@@ -68,7 +68,7 @@ if (verbose) {
     logDebug(''); // line break
 }
 
-concurently(commands, options).then(
+concurrently(commands, options).then(
     () => {
         logSuccess('\ndone');
     },
