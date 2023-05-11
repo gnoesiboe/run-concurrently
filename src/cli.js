@@ -79,9 +79,22 @@ result.then(
             (closeEvent) => closeEvent.exitCode > 0
         );
 
-        logError('\nOne of tasks returned error:');
+        logError('\nOne of tasks returned error');
+        if (!commandWithError) {
+            console.warn('Could not resolve command with error from concurrently response.');
+
+            process.exit(1);
+        }
+
         logDebug(commandWithError);
 
-        process.exit(commandWithError.exitCode);
+        const exitCode = parseInt(commandWithError?.exitCode, 10);
+        if (Number.isNaN(exitCode)) {
+            console.warn('Could not extract exit code from command with error.');
+
+            process.exit(1);
+        } else {
+            process.exit(exitCode);
+        }
     }
 );
