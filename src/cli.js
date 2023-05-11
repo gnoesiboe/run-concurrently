@@ -84,6 +84,8 @@ result.then(
             console.warn('Could not resolve command with error from concurrently response.');
 
             process.exit(1);
+
+            return;
         }
 
         logDebug(commandWithError);
