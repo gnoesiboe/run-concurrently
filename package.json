@@ -19,7 +19,7 @@
         "prettier": "prettier --write 'src/**/*.{js,json,md}'"
     },
     "engines": {
-        "node": "^16.0.0"
+        "node": ">=16"
     },
     "bin": {
         "run-concurrently": "./src/cli.js"
